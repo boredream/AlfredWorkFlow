@@ -1,14 +1,20 @@
-# -*- coding: utf-8 -*-
+#! /usr/bin/env python
+# -*- coding:utf8 -*-
+
 import sys
 import json
 import urllib.request
 import urllib.parse
 
+from configparser import ConfigParser
+
 pwd = ''
 try:
     pwd = sys.argv[1]
 except IndexError:
-    pwd = ''
+    cp = ConfigParser()
+    cp.read('config.conf')
+    pwd = cp.get('sh', 'pwd')
 
 url = 'http://1.1.1.2/ac_portal/login.php'
 data = {

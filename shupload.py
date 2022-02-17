@@ -1,12 +1,9 @@
 # -*- coding: utf-8 -*-
-import mimetypes
 import ssl
 import sys
-import json
-import urllib.request
-import urllib.parse
-import urllib.error
 import time
+import urllib.error
+import urllib.request
 
 ssl._create_default_https_context = ssl._create_unverified_context
 

@@ -1,12 +1,10 @@
+#!/usr/local/bin/python3.7
 # -*- coding: utf-8 -*-
 import json
 import sys
-import os
 
 from googletrans import Translator
 
-
-sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 
 src = sys.argv[1]
 

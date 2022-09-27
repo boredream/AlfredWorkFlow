@@ -30,10 +30,12 @@ def show_task_list():
 
     alfred_response = {"items": []}
     today = datetime.date.today()
-    first_date = today - datetime.timedelta(today.weekday())
-    for index in range(0, 14):
-        # 未点餐
-        date = first_date + datetime.timedelta(index)
+    remainder_day = 14 - today.weekday()
+
+    # 罗列从今天开始未来两周日期，默认未点餐
+    for index in range(0, remainder_day):
+        date = today + datetime.timedelta(index)
+
         # 跳过周末
         if date.weekday() >= 5:
             continue
@@ -43,10 +45,13 @@ def show_task_list():
         item = {"title": title, "subtitle": "点击添加", "valid": "true", "variables": {"date": date_str}}
         alfred_response['items'].append(item)
 
+    # 插入已点餐的日期
     for data in data_list:
-        # 插入已点餐的日期
         order_date = datetime.datetime.strptime(data["orderDate"], "%Y-%m-%d").date()
-        day_diff = (order_date - first_date).days
+        day_diff = (order_date - today).days
+        if day_diff < 0:
+            # 昨天之前数据
+            continue
 
         date_str = order_date.strftime("%m-%d")
         title = "[周%d] %s  点餐:%s" % (order_date.weekday() + 1, date_str, data["orderDish"])

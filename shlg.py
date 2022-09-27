@@ -8,18 +8,20 @@ import urllib.parse
 
 from configparser import ConfigParser
 
+cp = ConfigParser()
+cp.read('config.conf')
+
 pwd = ''
 try:
     pwd = sys.argv[1]
 except IndexError:
-    cp = ConfigParser()
-    cp.read('config.conf')
     pwd = cp.get('sh', 'pwd')
+shid = cp.get('sh', 'shid')
 
 url = 'http://1.1.1.2/ac_portal/login.php'
 data = {
     'opr': 'pwdLogin',
-    'userName': '18010089',
+    'userName': 'guest',
     'pwd': pwd,
     'rememberPwd': 1,
 }

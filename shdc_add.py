@@ -23,10 +23,12 @@ def add_task():
         print(json.dumps(alfred_response))
         return
 
-    item = {"title": "日期:%s  点餐:%s" % (date, dish), "subtitle": "点击提交", "valid": "true", "variables": {"date": date, "dish": dish}}
+    item = {"title": "日期:%s  点餐:%s" % (date, dish),
+            "subtitle": "点击提交",
+            "valid": "true",
+            "variables": {"date": date, "dish": dish}}
     alfred_response['items'].append(item)
     print(json.dumps(alfred_response))
 
 
 add_task()
-

@@ -1,10 +1,9 @@
 # coding:utf-8
 
+import datetime
 import json
 import ssl
-import sys
 import urllib.request
-import datetime
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
@@ -33,17 +32,17 @@ def show_task_list():
     remainder_day = 14 - today.weekday()
 
     # 罗列从今天开始未来两周日期，默认未点餐
-    for index in range(0, remainder_day):
+    for index in range(1, remainder_day):
         date = today + datetime.timedelta(index)
 
         # 跳过周末
         if date.weekday() >= 5:
             continue
 
-        date_str = date.strftime("%m-%d")
+        date_str = date.strftime("%Y-%m-%d")
         title = "[周%d] %s 【未点餐】" % (date.weekday() + 1, date_str)
         item = {"title": title, "subtitle": "点击添加", "valid": "true", "variables": {"date": date_str}}
-        alfred_response['items'].append(item)
+        alfred_response["items"].append(item)
 
     # 插入已点餐的日期
     for data in data_list:
@@ -53,9 +52,11 @@ def show_task_list():
             # 昨天之前数据
             continue
 
-        date_str = order_date.strftime("%m-%d")
-        title = "[周%d] %s  点餐:%s" % (order_date.weekday() + 1, date_str, data["orderDish"])
-        alfred_response['items'][day_diff] = {"title": title, "subtitle": "已点餐", "valid": "true", "arg": ""}
+        title = "[周%d] %s  点餐:%s" % (order_date.weekday() + 1, data["orderDate"], data["orderDish"])
+        for index in range(0, len(alfred_response["items"])):
+            if data["orderDate"] in alfred_response["items"][index]["title"]:
+                alfred_response["items"][index] = {"title": title, "subtitle": "已点餐", "valid": "true", "arg": ""}
+                break
 
     print(json.dumps(alfred_response))
 

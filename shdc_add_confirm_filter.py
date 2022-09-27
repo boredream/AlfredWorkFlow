@@ -16,11 +16,13 @@ auth = '&accountName=%s' % accountName
 
 
 def add_task_commit():
+    alfred_response = {"items": []}
     try:
         date = os.getenv('date')
         dish = os.getenv('dish')
     except IndexError:
-        sys.stdout.write("脚本参数错误")
+        alfred_response['items'].append({"title": "错误", "subtitle": "test"})
+        print(json.dumps(alfred_response))
         return
 
     # 发送请求
@@ -35,8 +37,9 @@ def add_task_commit():
         "Content-Type": "application/json; charset=UTF-8",
     }
     content = urllib.request.urlopen(request).read()
-    output = "%s %s\n点餐结果:%s" % (date, dish, content)
-    sys.stdout.write(output)
 
+    item = {"title": "日期:%s  点餐:%s" % (date, dish), "subtitle": "发送成功..." + content}
+    alfred_response['items'][0] = item
+    print(json.dumps(alfred_response))
 
-add_task_commit()
+sys.stdout.write("输出")

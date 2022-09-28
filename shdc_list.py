@@ -55,7 +55,8 @@ def show_task_list():
         title = "[周%d] %s  点餐:%s" % (order_date.weekday() + 1, data["orderDate"], data["orderDish"])
         for index in range(0, len(alfred_response["items"])):
             if data["orderDate"] in alfred_response["items"][index]["title"]:
-                alfred_response["items"][index] = {"title": title, "subtitle": "已点餐", "valid": "true", "arg": ""}
+                alfred_response["items"][index] = {"title": title, "subtitle": "点击修改", "valid": "true",
+                                                   "variables": {"taskId": data["uid"], "date": data["orderDate"]}}
                 break
 
     print(json.dumps(alfred_response))

@@ -16,6 +16,7 @@ auth = '&accountName=%s' % accountName
 def add_task():
     alfred_response = {"items": []}
     try:
+        task_id = os.getenv("taskId")
         date = os.getenv('date')
         dish = sys.argv[1]
     except IndexError:
@@ -23,8 +24,14 @@ def add_task():
         print(json.dumps(alfred_response))
         return
 
+    subtitle = '点击提交新增'
+    variables = {"date": date, "dish": dish}
+    if task_id:
+        subtitle = '点击提交修改'
+        variables["taskId"] = task_id
+
     item = {"title": "日期:%s  点餐:%s" % (date, dish),
-            "subtitle": "点击提交",
+            "subtitle": subtitle,
             "valid": "true",
             "variables": {"date": date, "dish": dish}}
     alfred_response['items'].append(item)

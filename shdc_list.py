@@ -32,7 +32,7 @@ def show_task_list():
     remainder_day = 14 - today.weekday()
 
     # 罗列从今天开始未来两周日期，默认未点餐
-    for index in range(1, remainder_day):
+    for index in range(0, remainder_day):
         date = today + datetime.timedelta(index)
 
         # 跳过周末

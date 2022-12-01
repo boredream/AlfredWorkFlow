@@ -42,4 +42,5 @@ def add_task_commit():
     alfred_response['items'][0] = item
     print(json.dumps(alfred_response))
 
+
 sys.stdout.write("输出")

@@ -1,14 +1,11 @@
 # coding:utf-8
 
-import datetime
-import json
-import ssl
-import sys
-import urllib.request
-import urllib.parse
-import random
 import hashlib
-
+import json
+import random
+import sys
+import urllib.parse
+import urllib.request
 
 # 百度翻译 http://api.fanyi.baidu.com/doc/21
 app_id = '20220930001362642'

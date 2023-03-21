@@ -21,7 +21,7 @@ def get_dish_list():
     content = urllib.request.urlopen(request).read()
     dish_list = json.loads(content)['data']
     # 逗号拼接，作为整个字符串保存到变量
-    return ','.join(dish_list).replace('/欣和专供', '').replace('/欣和企业专供', '')
+    return ','.join(dish_list)
 
 
 def get_task_list():

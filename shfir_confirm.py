@@ -72,14 +72,17 @@ def main():
     try:
         env = sys.argv[1]
         project_root_path = sys.argv[2]
-        file_name = sys.argv[3]
     except IndexError:
         env = 'debug'
         project_root_path = '/Users/lcy/Documents/mobile-android/'
+
+    try:
+        file_name = sys.argv[3]
+    except IndexError:
         file_name = None
 
     if not file_name:
-        print('build new apk')
+        print('build new apk %s' % env)
         build_apk(env, project_root_path)
         print('build done!')
         print('-------------------------')

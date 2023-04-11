@@ -11,6 +11,7 @@ import requests
 def build_apk(env, project_root_path):
     build_cmd = 'cd ' + project_root_path + ' && '
     build_cmd += ('./gradlew assembleShinho' + ('Debug' if env == 'debug' else 'Release'))
+    build_cmd += (' -D org.gradle.java.home=/Applications/Android\ Studio\ 2.app/Contents/jre/Contents/Home')
     os.system(build_cmd)
 
 
@@ -40,7 +41,7 @@ def upload_app_file(env, binary, project_root_path, file_name):
         # 如果没有指定上传文件，则获取目录下最新apk文件信息
         apk_dir = project_root_path + 'app/build/outputs/apk/shinho/%s/' % env
         if not file_name:
-            apk_info = json.load(open('%s/output.json' % apk_dir))[0]['apkInfo']
+            apk_info = json.load(open('%soutput-metadata.json' % apk_dir))['elements'][0]
             file_name = apk_info['outputFile']
 
         version_name = file_name.split('_')[1]

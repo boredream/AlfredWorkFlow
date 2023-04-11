@@ -56,7 +56,7 @@ jql = 'assignee in (21030087, 18020013, 21120065, 18070144, 18010089, 18070142, 
 data = {
     "jql": jql,
     "decorator": "none",
-    "maxResults": 300,
+    "maxResults": 999,
 }
 data = urlencode(data)
 

@@ -1,9 +1,10 @@
-# coding:utf-8
+#! /usr/bin/env python
+# -*- coding:utf8 -*-
 
 import json
 import os
 import re
-
+import browser_cookie3
 import requests
 
 
@@ -26,11 +27,26 @@ def pack(project_root_path):
     os.system(build_cmd)
     print('cmd success: ' + build_cmd)
 
-    # 压缩成wgt文件
-    zip_wgt_cmd = 'cd ' + project_root_path + '/dist/build/app && zip -q -r ' + appid + '.wgt ./'
-    os.system(zip_wgt_cmd)
-    print('cmd success: ' + zip_wgt_cmd)
-    return project_root_path + '/dist/build/app/' + appid + '.wgt'
+    # # 压缩成wgt文件
+    # zip_wgt_cmd = 'cd ' + project_root_path + '/dist/build/app && zip -q -r ' + appid + '.wgt ./'
+    # os.system(zip_wgt_cmd)
+    # print('cmd success: ' + zip_wgt_cmd)
+    # return project_root_path + '/dist/build/app/' + appid + '.wgt'
+
+    # 直接获取压缩好的文件
+    return project_root_path + '/dist/build/' + appid + '.wgt'
+
+
+# 根据 appid 获取数字 id，后面上传用
+def get_mp_num_id(token, mp_app_id):
+    url = 'https://httpapi-test.shinho.net.cn/mpc-minipg/miniprogram/detail/' + mp_app_id
+    headers = {
+        'x-amz-security-token': token,
+        'Content-Type': 'application/json'
+    }
+    response = requests.post(url, headers=headers)
+    response_json = response.content.decode('utf-8')
+    return str(json.loads(response_json)['data']['id'])
 
 
 # 上传wgt
@@ -82,10 +98,10 @@ def upload_wgt(token, mp_id, wgt_path):
     # 提交小程序包信息
     file_size = os.path.getsize(file_path)
     data = {
-        "mpId": 27,
+        "mpId": mp_id,
         "mpVer": version,
         "commitId": "" + version,
-        "unionId": file_name,
+        "unionId": file_name.split('.')[0],
         "packageUrl": upload_file_path,
         "desc": "upload by script",
         "fileName": file_name,
@@ -154,15 +170,26 @@ def commit_wgt(token, mp_app_id):
 
 
 def main():
-    project_root_path = '/Users/lcy/Documents/code/shinho/mpc-mp-template'
+    # TODO 修改成自己的数据
+    mp_app_id = 'cfcb84a49d51486b8bfa64a2102141aa'  # 小程序app id
+    project_root_path = '/Users/lcy/Documents/code/shinho/mpc-mp-template'  # 小程序项目地址
+
+    user_token = ''
+    for cookie in browser_cookie3.chrome(domain_name='shinho.net.cn'):
+        if cookie.name.startswith('MPC_') and cookie.name.endswith('_TOKEN'):
+            user_token = cookie.value
+    if user_token == '':
+        print('user_token not found')
+        return
+    print('get user token = ' + user_token)
+
     zip_wgt_path = pack(project_root_path)
 
-    token = 'af8ae5223e3c411cbaad258665c03399'
-    mp_app_id = 'cfcb84a49d51486b8bfa64a2102141aa'
-    mp_id = '27'
-    upload_wgt(token, mp_id, zip_wgt_path)
+    mp_id = get_mp_num_id(user_token, mp_app_id)  # 27
+    print('get mp id = ' + mp_id)
 
-    commit_wgt(token, mp_app_id)
+    upload_wgt(user_token, mp_id, zip_wgt_path)
+    commit_wgt(user_token, mp_app_id)
 
 
 main()

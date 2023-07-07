@@ -142,18 +142,19 @@ def create_issue(story, sub_task):
 
         }
     }
-    url = 'http://jira.shinho.net.cn/rest/api/2/issue'
-    data_json = json.dumps(issue).encode(encoding='utf-8')
-    post_req = urllib.request.Request(url=url,
-                                      method='POST',
-                                      data=data_json,
-                                      headers={
-                                          'content-type': 'application/json',
-                                          'Cookie': cookie
-                                      })
-    post_res_data = urllib.request.urlopen(post_req)
-    content = post_res_data.read().decode('utf-8')
-    print("success create = " + sub_task['name'] + " ... response = " + content)
+    # url = 'http://jira.shinho.net.cn/rest/api/2/issue'
+    # data_json = json.dumps(issue).encode(encoding='utf-8')
+    # post_req = urllib.request.Request(url=url,
+    #                                   method='POST',
+    #                                   data=data_json,
+    #                                   headers={
+    #                                       'content-type': 'application/json',
+    #                                       'Cookie': cookie
+    #                                   })
+    # post_res_data = urllib.request.urlopen(post_req)
+    # content = post_res_data.read().decode('utf-8')
+    content = ''
+    print("success create = " + story + " - " + sub_task['name'] + " ... response = " + content)
 
 
 def update_issue_point(jira_id, story_point):
@@ -189,8 +190,8 @@ def update_issue_point(jira_id, story_point):
 
 
 def main():
-    confluence_page_id = sys.argv[1]
-    # confluence_page_id = '92517447' # test
+    # confluence_page_id = sys.argv[1]
+    confluence_page_id = '97174887' # test
     user_points = {}
     story_subtask_map = excel_to_jira_info(confluence_page_id)
     for story, sub_task_list in story_subtask_map.items():

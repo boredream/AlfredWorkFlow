@@ -1,0 +1,442 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "223708",
+  "self": "http://jira.shinho.net.cn/rest/api/2/issue/223708",
+  "key": "SFA1-7622",
+  "fields": {
+    "fixVersions": [],
+    "resolution": null,
+    "customfield_11203": null,
+    "customfield_10500": null,
+    "customfield_10501": null,
+    "customfield_10502": null,
+    "customfield_10503": null,
+    "customfield_10504": null,
+    "customfield_10900": null,
+    "customfield_10901": null,
+    "customfield_10506": null,
+    "customfield_10902": null,
+    "customfield_10507": null,
+    "customfield_10508": null,
+    "customfield_10509": null,
+    "customfield_10906": null,
+    "lastViewed": "2023-03-29T13:33:29.634+0800",
+    "priority": {
+      "self": "http://jira.shinho.net.cn/rest/api/2/priority/3",
+      "iconUrl": "http://jira.shinho.net.cn/images/icons/priorities/medium.svg",
+      "name": "Medium",
+      "id": "3"
+    },
+    "customfield_10100": null,
+    "labels": [],
+    "customfield_10610": null,
+    "customfield_10612": null,
+    "timeestimate": null,
+    "aggregatetimeoriginalestimate": null,
+    "versions": [],
+    "issuelinks": [],
+    "assignee": null,
+    "status": {
+      "self": "http://jira.shinho.net.cn/rest/api/2/status/10000",
+      "description": "",
+      "iconUrl": "http://jira.shinho.net.cn/",
+      "name": "待办中",
+      "id": "10000",
+      "statusCategory": {
+        "self": "http://jira.shinho.net.cn/rest/api/2/statuscategory/2",
+        "id": 2,
+        "key": "new",
+        "colorName": "blue-gray",
+        "name": "待办"
+      }
+    },
+    "components": [],
+    "customfield_10210": 100.0,
+    "customfield_10211": {
+      "self": "http://jira.shinho.net.cn/rest/api/2/customFieldOption/10203",
+      "value": "No",
+      "id": "10203"
+    },
+    "customfield_11300": null,
+    "customfield_10203": null,
+    "customfield_10204": null,
+    "customfield_10600": null,
+    "customfield_10205": null,
+    "customfield_10601": null,
+    "customfield_10206": null,
+    "customfield_10602": null,
+    "customfield_10207": null,
+    "aggregatetimeestimate": null,
+    "customfield_10208": null,
+    "customfield_10604": null,
+    "customfield_10209": {
+      "self": "http://jira.shinho.net.cn/rest/api/2/customFieldOption/10201",
+      "value": "No",
+      "id": "10201"
+    },
+    "customfield_10605": null,
+    "customfield_10606": null,
+    "customfield_10607": null,
+    "customfield_10608": "2023-03-29",
+    "customfield_10609": null,
+    "creator": {
+      "self": "http://jira.shinho.net.cn/rest/api/2/user?username=18010089",
+      "name": "18010089",
+      "key": "chunyang.li",
+      "emailAddress": "lichunyang@shinhofood.com",
+      "avatarUrls": {
+        "48x48": "http://jira.shinho.net.cn/secure/useravatar?ownerId=chunyang.li&avatarId=10805",
+        "24x24": "http://jira.shinho.net.cn/secure/useravatar?size=small&ownerId=chunyang.li&avatarId=10805",
+        "16x16": "http://jira.shinho.net.cn/secure/useravatar?size=xsmall&ownerId=chunyang.li&avatarId=10805",
+        "32x32": "http://jira.shinho.net.cn/secure/useravatar?size=medium&ownerId=chunyang.li&avatarId=10805"
+      },
+      "displayName": "李春阳",
+      "active": true,
+      "timeZone": "Asia/Shanghai"
+    },
+    "subtasks": [
+      {
+        "id": "223992",
+        "key": "SFA1-7649",
+        "self": "http://jira.shinho.net.cn/rest/api/2/issue/223992",
+        "fields": {
+          "summary": "【测试】IOS-o2o扫街",
+          "status": {
+            "self": "http://jira.shinho.net.cn/rest/api/2/status/10000",
+            "description": "",
+            "iconUrl": "http://jira.shinho.net.cn/",
+            "name": "待办中",
+            "id": "10000",
+            "statusCategory": {
+              "self": "http://jira.shinho.net.cn/rest/api/2/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "待办"
+            }
+          },
+          "priority": {
+            "self": "http://jira.shinho.net.cn/rest/api/2/priority/3",
+            "iconUrl": "http://jira.shinho.net.cn/images/icons/priorities/medium.svg",
+            "name": "Medium",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "http://jira.shinho.net.cn/rest/api/2/issuetype/10003",
+            "id": "10003",
+            "description": "问题的子任务",
+            "iconUrl": "http://jira.shinho.net.cn/secure/viewavatar?size=xsmall&avatarId=10316&avatarType=issuetype",
+            "name": "子任务",
+            "subtask": true,
+            "avatarId": 10316
+          }
+        }
+      },
+      {
+        "id": "223993",
+        "key": "SFA1-7650",
+        "self": "http://jira.shinho.net.cn/rest/api/2/issue/223993",
+        "fields": {
+          "summary": "【测试】Android-o2o扫街",
+          "status": {
+            "self": "http://jira.shinho.net.cn/rest/api/2/status/10000",
+            "description": "",
+            "iconUrl": "http://jira.shinho.net.cn/",
+            "name": "待办中",
+            "id": "10000",
+            "statusCategory": {
+              "self": "http://jira.shinho.net.cn/rest/api/2/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "待办"
+            }
+          },
+          "priority": {
+            "self": "http://jira.shinho.net.cn/rest/api/2/priority/3",
+            "iconUrl": "http://jira.shinho.net.cn/images/icons/priorities/medium.svg",
+            "name": "Medium",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "http://jira.shinho.net.cn/rest/api/2/issuetype/10003",
+            "id": "10003",
+            "description": "问题的子任务",
+            "iconUrl": "http://jira.shinho.net.cn/secure/viewavatar?size=xsmall&avatarId=10316&avatarType=issuetype",
+            "name": "子任务",
+            "subtask": true,
+            "avatarId": 10316
+          }
+        }
+      },
+      {
+        "id": "223994",
+        "key": "SFA1-7651",
+        "self": "http://jira.shinho.net.cn/rest/api/2/issue/223994",
+        "fields": {
+          "summary": "【测试】IOS-o2o客户信息修改",
+          "status": {
+            "self": "http://jira.shinho.net.cn/rest/api/2/status/10000",
+            "description": "",
+            "iconUrl": "http://jira.shinho.net.cn/",
+            "name": "待办中",
+            "id": "10000",
+            "statusCategory": {
+              "self": "http://jira.shinho.net.cn/rest/api/2/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "待办"
+            }
+          },
+          "priority": {
+            "self": "http://jira.shinho.net.cn/rest/api/2/priority/3",
+            "iconUrl": "http://jira.shinho.net.cn/images/icons/priorities/medium.svg",
+            "name": "Medium",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "http://jira.shinho.net.cn/rest/api/2/issuetype/10003",
+            "id": "10003",
+            "description": "问题的子任务",
+            "iconUrl": "http://jira.shinho.net.cn/secure/viewavatar?size=xsmall&avatarId=10316&avatarType=issuetype",
+            "name": "子任务",
+            "subtask": true,
+            "avatarId": 10316
+          }
+        }
+      },
+      {
+        "id": "223995",
+        "key": "SFA1-7652",
+        "self": "http://jira.shinho.net.cn/rest/api/2/issue/223995",
+        "fields": {
+          "summary": "【测试】Android-o2o客户信息修改",
+          "status": {
+            "self": "http://jira.shinho.net.cn/rest/api/2/status/10000",
+            "description": "",
+            "iconUrl": "http://jira.shinho.net.cn/",
+            "name": "待办中",
+            "id": "10000",
+            "statusCategory": {
+              "self": "http://jira.shinho.net.cn/rest/api/2/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "待办"
+            }
+          },
+          "priority": {
+            "self": "http://jira.shinho.net.cn/rest/api/2/priority/3",
+            "iconUrl": "http://jira.shinho.net.cn/images/icons/priorities/medium.svg",
+            "name": "Medium",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "http://jira.shinho.net.cn/rest/api/2/issuetype/10003",
+            "id": "10003",
+            "description": "问题的子任务",
+            "iconUrl": "http://jira.shinho.net.cn/secure/viewavatar?size=xsmall&avatarId=10316&avatarType=issuetype",
+            "name": "子任务",
+            "subtask": true,
+            "avatarId": 10316
+          }
+        }
+      },
+      {
+        "id": "223996",
+        "key": "SFA1-7653",
+        "self": "http://jira.shinho.net.cn/rest/api/2/issue/223996",
+        "fields": {
+          "summary": "【测试】后台-o2o扫街审核",
+          "status": {
+            "self": "http://jira.shinho.net.cn/rest/api/2/status/10000",
+            "description": "",
+            "iconUrl": "http://jira.shinho.net.cn/",
+            "name": "待办中",
+            "id": "10000",
+            "statusCategory": {
+              "self": "http://jira.shinho.net.cn/rest/api/2/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "待办"
+            }
+          },
+          "priority": {
+            "self": "http://jira.shinho.net.cn/rest/api/2/priority/3",
+            "iconUrl": "http://jira.shinho.net.cn/images/icons/priorities/medium.svg",
+            "name": "Medium",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "http://jira.shinho.net.cn/rest/api/2/issuetype/10003",
+            "id": "10003",
+            "description": "问题的子任务",
+            "iconUrl": "http://jira.shinho.net.cn/secure/viewavatar?size=xsmall&avatarId=10316&avatarType=issuetype",
+            "name": "子任务",
+            "subtask": true,
+            "avatarId": 10316
+          }
+        }
+      },
+      {
+        "id": "223997",
+        "key": "SFA1-7654",
+        "self": "http://jira.shinho.net.cn/rest/api/2/issue/223997",
+        "fields": {
+          "summary": "【测试】后台-o2o客户信息修改审核",
+          "status": {
+            "self": "http://jira.shinho.net.cn/rest/api/2/status/10000",
+            "description": "",
+            "iconUrl": "http://jira.shinho.net.cn/",
+            "name": "待办中",
+            "id": "10000",
+            "statusCategory": {
+              "self": "http://jira.shinho.net.cn/rest/api/2/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "待办"
+            }
+          },
+          "priority": {
+            "self": "http://jira.shinho.net.cn/rest/api/2/priority/3",
+            "iconUrl": "http://jira.shinho.net.cn/images/icons/priorities/medium.svg",
+            "name": "Medium",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "http://jira.shinho.net.cn/rest/api/2/issuetype/10003",
+            "id": "10003",
+            "description": "问题的子任务",
+            "iconUrl": "http://jira.shinho.net.cn/secure/viewavatar?size=xsmall&avatarId=10316&avatarType=issuetype",
+            "name": "子任务",
+            "subtask": true,
+            "avatarId": 10316
+          }
+        }
+      }
+    ],
+    "customfield_11010": null,
+    "reporter": {
+      "self": "http://jira.shinho.net.cn/rest/api/2/user?username=18010089",
+      "name": "18010089",
+      "key": "chunyang.li",
+      "emailAddress": "lichunyang@shinhofood.com",
+      "avatarUrls": {
+        "48x48": "http://jira.shinho.net.cn/secure/useravatar?ownerId=chunyang.li&avatarId=10805",
+        "24x24": "http://jira.shinho.net.cn/secure/useravatar?size=small&ownerId=chunyang.li&avatarId=10805",
+        "16x16": "http://jira.shinho.net.cn/secure/useravatar?size=xsmall&ownerId=chunyang.li&avatarId=10805",
+        "32x32": "http://jira.shinho.net.cn/secure/useravatar?size=medium&ownerId=chunyang.li&avatarId=10805"
+      },
+      "displayName": "李春阳",
+      "active": true,
+      "timeZone": "Asia/Shanghai"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_10200": null,
+    "customfield_10201": null,
+    "customfield_10202": null,
+    "customfield_11006": null,
+    "customfield_11008": null,
+    "customfield_11009": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "votes": {
+      "self": "http://jira.shinho.net.cn/rest/api/2/issue/SFA1-7622/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "issuetype": {
+      "self": "http://jira.shinho.net.cn/rest/api/2/issuetype/10001",
+      "id": "10001",
+      "description": "创建的 JIRA 软件-请勿编辑或删除。问题类型的用户故事。",
+      "iconUrl": "http://jira.shinho.net.cn/images/icons/issuetypes/story.svg",
+      "name": "故事",
+      "subtask": false
+    },
+    "timespent": null,
+    "project": {
+      "self": "http://jira.shinho.net.cn/rest/api/2/project/10301",
+      "id": "10301",
+      "key": "SFA1",
+      "name": "SFA",
+      "avatarUrls": {
+        "48x48": "http://jira.shinho.net.cn/secure/projectavatar?pid=10301&avatarId=10331",
+        "24x24": "http://jira.shinho.net.cn/secure/projectavatar?size=small&pid=10301&avatarId=10331",
+        "16x16": "http://jira.shinho.net.cn/secure/projectavatar?size=xsmall&pid=10301&avatarId=10331",
+        "32x32": "http://jira.shinho.net.cn/secure/projectavatar?size=medium&pid=10301&avatarId=10331"
+      }
+    },
+    "customfield_11001": null,
+    "aggregatetimespent": null,
+    "customfield_11003": null,
+    "customfield_11004": null,
+    "customfield_11005": {
+      "self": "http://jira.shinho.net.cn/rest/api/2/customFieldOption/10605",
+      "value": "生产常规-PRD",
+      "id": "10605"
+    },
+    "customfield_11400": null,
+    "customfield_10700": null,
+    "customfield_10701": null,
+    "customfield_10704": null,
+    "resolutiondate": null,
+    "customfield_10705": null,
+    "customfield_10706": null,
+    "workratio": -1,
+    "watches": {
+      "self": "http://jira.shinho.net.cn/rest/api/2/issue/SFA1-7622/watchers",
+      "watchCount": 1,
+      "isWatching": true
+    },
+    "created": "2023-03-29T13:24:21.000+0800",
+    "customfield_11105": null,
+    "customfield_11106": null,
+    "customfield_11108": null,
+    "updated": "2023-03-30T13:01:57.000+0800",
+    "timeoriginalestimate": null,
+    "description": null,
+    "customfield_11100": null,
+    "customfield_11101": null,
+    "customfield_11103": null,
+    "customfield_11500": null,
+    "timetracking": {},
+    "customfield_10005": "1|i01ydb:",
+    "customfield_10006": 56.0,
+    "customfield_10800": null,
+    "attachment": [],
+    "summary": "餐饮网络客户",
+    "customfield_10000": null,
+    "customfield_11210": null,
+    "customfield_10004": [
+      "com.atlassian.greenhopper.service.sprint.Sprint@6f7dce9c[id=3792,rapidViewId=185,state=ACTIVE,name=Sprint 106（3/31-4/17）,startDate=2023-03-30T09:54:09.769+08:00,endDate=2023-04-13T09:54:00.000+08:00,completeDate=<null>,sequence=3792,goal=]"
+    ],
+    "customfield_10400": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@78d54330[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@211b3328[overall=com.atlassian.jira.plugin.devstatus.summary.beans.PullRequestOverallBean@7b4e0b8d[stateCount=0,state=OPEN,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7441da4c[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@265fcb37[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@5e253ea7[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@55bc548d[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2fd577cc[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@770b1772[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2ccf32[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@3783fb86[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@33ec81ad[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@1c73b025[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_11204": null,
+    "customfield_11205": null,
+    "environment": null,
+    "customfield_11206": null,
+    "customfield_11207": null,
+    "customfield_11209": null,
+    "duedate": null,
+    "comment": {
+      "comments": [],
+      "maxResults": 0,
+      "total": 0,
+      "startAt": 0
+    }
+  }
+}

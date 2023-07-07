@@ -10,18 +10,14 @@ from configparser import ConfigParser
 
 cp = ConfigParser()
 cp.read('config.conf')
-
-pwd = ''
-try:
-    pwd = sys.argv[1]
-except IndexError:
-    pwd = cp.get('sh', 'pwd')
+    
 shid = cp.get('sh', 'shid')
+pwd = cp.get('sh', 'pwd')
 
 url = 'http://1.1.1.2/ac_portal/login.php'
 data = {
     'opr': 'pwdLogin',
-    'userName': 'guest',
+    'userName': shid,
     'pwd': pwd,
     'rememberPwd': 1,
 }

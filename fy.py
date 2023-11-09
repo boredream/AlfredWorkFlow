@@ -3,6 +3,7 @@
 import hashlib
 import json
 import random
+import re
 import sys
 import urllib.parse
 import urllib.request
@@ -37,10 +38,17 @@ def trans(query):
     url = 'http://api.fanyi.baidu.com/api/trans/vip/translate'
     # url = 'http://fanyi-api.baidu.com/api/trans/vip/translate' \
     #       '?q=%s&from=zh&to=en&appid=%s&salt=%d&sign=%s' % (encode_query, app_id, salt, sign)
+
+    from_lan = 'zh'
+    to_lan = 'en'
+    if re.match(re.compile(r'[a-zA-Z]+'), query):
+        from_lan = 'en'
+        to_lan = 'zh'
+
     data = {
         'q': query,
-        'from': 'zh',
-        'to': 'en',
+        'from': from_lan,
+        'to': to_lan,
         'appid': app_id,
         'salt': salt,
         'sign': sign,
@@ -60,5 +68,8 @@ result_list = trans(query)
 for result in result_list:
     dst = result['dst']
     item = {"title": dst, "subtitle": "点击复制", "valid": "true", "arg": dst}
+    alfred_response["items"].append(item)
+    anki = 'ANKI-' + query + "=" + dst
+    item = {"title": anki, "subtitle": "记录到Anki", "valid": "true", "arg": anki}
     alfred_response["items"].append(item)
 print(json.dumps(alfred_response))

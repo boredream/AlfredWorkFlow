@@ -4,7 +4,7 @@ from urllib.parse import urlencode
 # TODO Alfred 运行需要权限的命令（获取cookie）时，失败
 import browser_cookie3
 
-dict = browser_cookie3.chrome(domain_name='shinho.net.cn')
+dict = browser_cookie3.chrome(domain_name='jira.shinho.net.cn')
 
 cookie = ''
 for item in dict:
@@ -41,18 +41,26 @@ if not end_date:
     end_date = today.strftime("%Y-%m-%d")
 
 
-# start_date = '2023-2-24'
-# end_date = '2023-3-13'
+# start_date = '2023-9-15'
+# end_date = '2023-10-9'
 
 # 按条件筛选
 # jql = 'project = SFA1 ' \
+
 #       'AND resolution in (已解决, Done, 已完成, 完成) ' \
 #       'AND 预计完成日期 >= %s AND 预计完成日期 <= %s' \
 #       % (start_date, end_date)
-jql = 'assignee in (21030087, 18020013, 21120065, 18070144, 18010089, 18070142, 20030015, 19040096) ' \
+from sfa_user import user_id_name_map
+user_id_list = ''
+for user_id in user_id_name_map.keys():
+    user_id_list += (',' + user_id)
+user_id_list = user_id_list[1:]
+
+
+jql = 'assignee in (%s) ' \
       'AND resolution in (已解决, Done, 已完成, 完成) ' \
       'AND 预计完成日期 >= %s AND 预计完成日期 <= %s' \
-      % (start_date, end_date)
+      % (user_id_list, start_date, end_date)
 data = {
     "jql": jql,
     "decorator": "none",
@@ -71,33 +79,23 @@ response = json.loads(content)
 user_point = {}
 task_list = response['issues']
 for task in task_list:
-    story_point = int(task['fields']['customfield_10006'])
+    story_point = float(task['fields']['customfield_10006']) / 2
     user = task['fields']['assignee']['displayName']
     if user not in user_point:
         user_point[user] = story_point
     else:
         user_point[user] += story_point
 
-total_point = 75
+total_point = 0
 output = start_date + ' ~ ' + end_date + '\n'
 for key, value in user_point.items():
     title = key + ' = ' + str(value)
-    if value < 44:
-        title += "【不足44】"
+    if value < 22:
+        title += "【不足22】"
     output += title
     output += '\n'
     total_point += value
 
 sys.stdout.write(output)
-sys.stdout.write('总' + str(total_point))
-sys.stdout.write('平均' + str(total_point / len(user_point.items())))
-
-# alfred_response = {"items": []}
-# for key, value in user_point.items():
-#     title = key + '\t= ' + str(value)
-#     if value < 44:
-#         title += "【不足44】"
-#     item = {"title": title}
-#     alfred_response["items"].append(item)
-#
-# print(json.dumps(alfred_response))
+sys.stdout.write('总' + str(total_point) + '\n')
+sys.stdout.write('平均' + str(total_point / len(user_point.items())) + '\n')

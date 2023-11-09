@@ -7,7 +7,7 @@ import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 
 
-host = 'http://110.42.209.75/backend'
+host = 'https://110.42.209.75/backend'
 accountName = '18501683421@shinho.net.cn'
 auth = '&accountName=%s' % accountName
 

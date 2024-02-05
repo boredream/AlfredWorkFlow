@@ -10,7 +10,7 @@ import urllib.parse
 ssl._create_default_https_context = ssl._create_unverified_context
 
 
-host = 'https://110.42.209.75'
+host = 'http://124.70.194.85'
 accountName = '18501683421@shinho.net.cn'
 auth = '&accountName=%s' % accountName
 

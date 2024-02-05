@@ -51,7 +51,7 @@ def trans(query):
         'to': to_lan,
         'appid': app_id,
         'salt': salt,
-        'sign': sign,
+        'sign': sign
     }
 
     data = urllib.parse.urlencode(data).encode("utf-8")
@@ -69,7 +69,6 @@ for result in result_list:
     dst = result['dst']
     item = {"title": dst, "subtitle": "点击复制", "valid": "true", "arg": dst}
     alfred_response["items"].append(item)
-    anki = 'ANKI-' + query + "=" + dst
-    item = {"title": anki, "subtitle": "记录到Anki", "valid": "true", "arg": anki}
+    item = {"title": query + '|' + dst, "subtitle": "记录到Anki", "valid": "true", "arg": 'ANKI-' + query + "=" + dst}
     alfred_response["items"].append(item)
 print(json.dumps(alfred_response))

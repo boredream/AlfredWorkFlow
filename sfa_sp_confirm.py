@@ -58,7 +58,7 @@ user_id_list = user_id_list[1:]
 
 
 jql = 'assignee in (%s) ' \
-      'AND resolution in (已解决, Done, 已完成, 完成) ' \
+      'AND resolution in (已解决, Done, 已完成, 任务已完成, 完成) ' \
       'AND 预计完成日期 >= %s AND 预计完成日期 <= %s' \
       % (user_id_list, start_date, end_date)
 data = {

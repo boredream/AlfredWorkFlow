@@ -31,6 +31,7 @@ response = urllib.request.urlopen(request).read().decode('utf-8')
 # response = "{'success':false, 'msg':'用户已在线，不需要再次认证','action':'location','pop':0,'userName':'18010089','location':''}"
 
 response = response.replace('\'', '\"')
+print(response)
 msg = json.loads(response)['msg']
 
 # item = {

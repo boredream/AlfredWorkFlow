@@ -11,8 +11,8 @@ from configparser import ConfigParser
 cp = ConfigParser()
 cp.read('config.conf')
     
-shid = cp.get('sh', 'shid')
-pwd = cp.get('sh', 'pwd')
+shid = cp.get('common', 'shid')
+pwd = cp.get('common', 'pwd')
 
 url = 'http://1.1.1.2/ac_portal/login.php'
 data = {
@@ -31,7 +31,6 @@ response = urllib.request.urlopen(request).read().decode('utf-8')
 # response = "{'success':false, 'msg':'用户已在线，不需要再次认证','action':'location','pop':0,'userName':'18010089','location':''}"
 
 response = response.replace('\'', '\"')
-print(response)
 msg = json.loads(response)['msg']
 
 # item = {

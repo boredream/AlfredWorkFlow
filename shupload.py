@@ -14,7 +14,7 @@ except IndexError:
     arg = 'error'
 path = arg
 
-path = '/Users/lcy/Documents/code/alfred/SHWorkFlow/shlg.py'
+path = '/Users/Bore/Documents/code/00shproject/mobile-android'
 
 
 def _encode_multipart(params_dict):

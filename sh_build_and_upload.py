@@ -15,7 +15,7 @@ def get_user_key():
     # shid = cp.get('sh', 'shid')
     # pwd = cp.get('sh', 'pwd')
     shid = '18010089'
-    pwd = 'Bore123456'
+    pwd = 'Bore123123'
     params = {
         "userName": shid,
         "password": pwd
@@ -29,7 +29,7 @@ def get_user_key():
 def build_apk(env, project_root_path):
     build_cmd = 'cd ' + project_root_path + ' && '
     build_cmd += ('./gradlew assemble' + ('Debug' if env == 'debug' else 'Release'))
-    build_cmd += (' -D org.gradle.java.home=/Applications/Android\ Studio\ 2.app/Contents/jre/Contents/Home')
+    build_cmd += (' -D org.gradle.java.home=/Applications/Android\ Studio.app/Contents/jre/Contents/Home')
     print('build cmd = ' + build_cmd)
     os.system(build_cmd)
 
@@ -92,7 +92,7 @@ def get_apk_info(project_root_path, env):
 
 
 def main():
-    project_id = 0  # 4=c4i  5=sfa  15=mpc
+    project_id = 5  # 4=c4i  5=sfa  15=mpc
 
     try:
         project_id = int(sys.argv[1])
@@ -106,11 +106,11 @@ def main():
 
     project_root_path = ''
     if project_id == 4:
-        project_root_path = '/Users/lcy/Documents/c4i/mobile/c4iapp/platforms/android'
+        project_root_path = '/Users/Bore/Documents/c4i/mobile/c4iapp/platforms/android'
     elif project_id == 5:
-        project_root_path = '/Users/lcy/Documents/mobile-android'
+        project_root_path = '/Users/Bore/Documents/code/00shproject/mobile-android'
     elif project_id == 15:
-        project_root_path = '/Users/lcy/Documents/code/shinho/mpc-android-template'
+        project_root_path = '/Users/Bore/Documents/code/shinho/mpc-android-template'
 
     if project_id == 0:
         print('project_id 不匹配')
